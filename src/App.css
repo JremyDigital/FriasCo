@@ -4,7 +4,7 @@
     --beige: #e4decc;
     --dark-beige: #bab5a8;
     --black: #212223;
-    --oranage: #e5b259;
+    --orange: #e5b259;
 
     /* padding, margin */
     --sm-padding: 1em 1.5em 0em;
@@ -127,6 +127,106 @@ nav {
     display: none;
 }
 
+/* popup menu */
+#popup-menu {
+    position: absolute;
+    z-index: 1500;
+    background: var(--beige);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+/* logo area popup menu */
+
+#logo-area {
+    background: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    overflow: hidden;
+}
+
+#sm-logo-menu {
+    width: 4em;
+    z-index: 200;
+}
+
+/* link area popup menu */
+#link-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#link-area ul {
+    list-style: none;
+    text-align: center;
+    margin: 2em 0em 1em;
+}
+
+#link-area ul a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.333em;
+    padding: 1em 1em 0.75em;
+    position: relative;
+    top: 10px;
+    margin: 0.5em 0em;
+    transition: 0.5s ease;
+}
+
+#link-area ul a:hover {
+    background: var(--orange);
+    border-radius: var(--btn-rad);
+}
+
+.active-link {
+    background: var(--orange);
+    border-radius: var(--btn-rad);
+    transition: 0.5s ease;
+}
+
+.active-link:hover {
+    background: var(--dark-beige) !important;
+}
+
+/* popup menu transition handled by Framer Motion – no extra CSS for slide needed */
+
+/* close area */
+#close-area {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--dark-beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding: 1rem;
+    z-index: 2000;
+}
+
+#close-area button {
+    background: none;
+    border: none;
+    color: var(--black);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#close-area button:hover {
+    transform: scale(1.2);
+}
+
 /* hero section */
 
 #hero {
@@ -149,7 +249,7 @@ nav {
 
 #hero button {
     color: var(--black);
-    background: var(--oranage);
+    background: var(--orange);
     transition: 0.5s ease;
 }
 
@@ -161,6 +261,10 @@ nav {
 
 #hero button svg {
     margin-right: 10px;
+}
+
+#hero button span {
+    -webkit-text-stroke: 0.75px var(--black);
 }
 
 /* scroll down icon*/
@@ -220,4 +324,12 @@ nav {
     height: 30px;
     background: var(--dark-beige);
     margin: 0em 0.5em;
+}
+
+/* Tablet MQ's */
+@media (width >= 682px) {
+}
+
+/* Desktop MQ's */
+@media (width >= 1024px) {
 }
